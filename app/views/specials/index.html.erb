@@ -1,63 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script type="text/javascript" src="index.js"></script>
-    <!-- Latest compiled and minified CSS -->
-<!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+<h1>Listing Specials</h1>
 
-<!-- Optional theme -->
-<!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
+<div id="specials-list" style="display:table">
 
-<!-- Latest compiled and minified JavaScript -->
-<!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>-->
-    <title>Drink Specials</title>
-</head>
-<body>
-    <nav class="navbar navbar-inverse"><p class="navbar-text" style="text-align:center; color:white; width:100%">Hello World</p></nav>
-
-    <h1>Listing Specials</h1>
-
-    <div id="specials-list" style="display:table">
-
-      <% @specials.each do |special| %>
-        <div class="specials-list-rounded" onClick="location.href='/specials/<%= special._id %>'" style="cursor:pointer">
-          <div class="" style="display:inline-table;width:100%;">
-            <div style="width:66%;font:24px bold;display:table-cell"><%= special.bar.name %>: <%= special.name %></div>
-            <div style="width:34%;display:table-cell">
-              <div class="progress progress-striped active status-bar">
-                <% if (100.0 * special.bar.numberOfUsers / special.requiredUsers) < 25 %>
-                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * special.bar.numberOfUsers / special.requiredUsers %>%;">
-                  <div class="sr-only"></div>
-                </div>
-
-                <% elsif (100.0 * special.bar.numberOfUsers / special.requiredUsers) < 50 %>
-                  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * special.bar.numberOfUsers / special.requiredUsers %>%;">
-                  <div class="sr-only"></div>
-                  </div>
-                <% elsif (100.0 * special.bar.numberOfUsers / special.requiredUsers) < 100 %>
-                  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * special.bar.numberOfUsers / special.requiredUsers %>%;">
-                  <div class="sr-only"></div>
-                  </div>
-                <% else %>
-                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * special.bar.numberOfUsers / special.requiredUsers %>%;">
-                  <div class="sr-only"></div>
-                  </div>
-                <% end %>
-              </div>
-              <%= special.bar.numberOfUsers %> out of <%= special.requiredUsers %> users!
+  <% @specials.each do |special| %>
+    <div class="specials-list-rounded" onClick="location.href='/specials/<%= special._id %>'" style="cursor:pointer">
+      <div class="" style="display:inline-table;width:100%;">
+        <div style="width:66%;font:24px bold;display:table-cell"><%= special.bar.name %>: <%= special.name %></div>
+        <div style="width:34%;display:table-cell">
+          <div class="progress progress-striped active status-bar">
+            <% if (100.0 * special.bar.numberOfUsers / special.requiredUsers) < 25 %>
+              <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * special.bar.numberOfUsers / special.requiredUsers %>%;">
+              <div class="sr-only"></div>
             </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
 
-    <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation"><div style="width:100%">
-        <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p>
-        <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p>
-        <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p>
+            <% elsif (100.0 * special.bar.numberOfUsers / special.requiredUsers) < 50 %>
+              <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * special.bar.numberOfUsers / special.requiredUsers %>%;">
+              <div class="sr-only"></div>
+              </div>
+            <% elsif (100.0 * special.bar.numberOfUsers / special.requiredUsers) < 100 %>
+              <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * special.bar.numberOfUsers / special.requiredUsers %>%;">
+              <div class="sr-only"></div>
+              </div>
+            <% else %>
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * special.bar.numberOfUsers / special.requiredUsers %>%;">
+              <div class="sr-only"></div>
+              </div>
+            <% end %>
+          </div>
+          <%= special.bar.numberOfUsers %> out of <%= special.requiredUsers %> users!
         </div>
-    </nav>
-    
-</body>
-</html>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
+  <div style="width:100%;padding-left:5%">
+    <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p>
+    <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p>
+    <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p>
+  </div>
+</nav>

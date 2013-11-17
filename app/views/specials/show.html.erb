@@ -1,34 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script type="text/javascript" src="index.js"></script>
-    <!-- Latest compiled and minified CSS -->
-
-    <title>Drink Specials</title>
-</head>
-<body>
-
-    <nav class="navbar navbar-inverse"><p class="navbar-text" style="text-align:center; color:white; width:100%">Hello World</p></nav>
-
-    <div class="panel panel-info">
-      <div class="panel-heading"><%= @special.bar.name %></div>
-      <div class="panel-body">
-
-      </div>
-    </div>
-    
-    <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation"><div style="width:100%">
-        <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p>
-        <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p>
-        <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p>
+<div class="panel panel-info">
+  <div class="panel-heading" style="font-size:x-large;"><%= @special.bar.name %></div>
+  <div class="panel-body">
+    <div><%= @special.name %></div>
+    <br>
+    <div><%= @special.description %></div>
+    <br>
+    <div class="progress progress-striped active status-bar">
+      <% if (100.0 * @special.bar.numberOfUsers / @special.requiredUsers) < 25 %>
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= @special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * @special.bar.numberOfUsers / @special.requiredUsers %>%;">
+        <div class="sr-only"></div>
         </div>
-    </nav>
-    
-</body>
-</html>
-
+      <% elsif (100.0 * @special.bar.numberOfUsers / @special.requiredUsers) < 50 %>
+        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * @special.bar.numberOfUsers / @special.requiredUsers %>%;">
+        <div class="sr-only"></div>
+        </div>
+      <% elsif (100.0 * @special.bar.numberOfUsers / @special.requiredUsers) < 100 %>
+        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= @special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * @special.bar.numberOfUsers / @special.requiredUsers %>%;">
+        <div class="sr-only"></div>
+        </div>
+      <% else %>
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= @special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * @special.bar.numberOfUsers / @special.requiredUsers %>%;">
+        <div class="sr-only"></div>
+        </div>
+      <% end %>
+    </div>
+    <div>
+      <%= @special.bar.numberOfUsers %> out of <%= @special.requiredUsers %> users!
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Back', specials_path %>
+
+<nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
+  <div style="width:100%;padding-left:5%">
+    <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p> <!-- glyphicon glyphicon-arrow-left / glyphicon-chevron-left-->
+    <p class="navbar-text" style="text-align:center; color:white; width:30%"><%= link_to "Check-In", checkin_path %></p> <!-- glyphicon glyphicon-ok -->
+    <a class="navbar-text" style="text-align:center; color:white; width:30%" href="http://maps.google.com/q=<%= @address %>"><span class="glyphicon glyphicon-map-marker"></span></a>
+  </div>
+</nav>

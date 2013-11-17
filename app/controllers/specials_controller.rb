@@ -14,6 +14,24 @@ class SpecialsController < ApplicationController
   # GET /specials/1.json
   def show
     @special = Special.find(params[:id])
+    @address = Special.find(params[:id]).bar.getNavigationAddress
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @special }
+    end
+  end
+
+  # GET /specials/1/checkin
+  def checkin
+
+    @bar = Special.find(params[:id]).bar
+    @bar.numberOfUsers += 1
+    @bar.save
+
+    @twitterMessage = CGI::escape("I've checked in at " + @bar.name + "! Help me unlock this special by joining me here!")
+
+    @special = Special.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
