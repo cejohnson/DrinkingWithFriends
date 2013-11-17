@@ -7,6 +7,8 @@ gem 'rails', '3.2.15'
 
 gem 'mongoid'
 
+#gem 'bootstrap-rails'
+
 
 
 # Gems used only for assets and not required

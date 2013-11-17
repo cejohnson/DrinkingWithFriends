@@ -11,3 +11,28 @@
  *= require_self
  *= require_tree .
  */
+
+
+/*div#outer-container {
+  height: 960px;
+  width: 640px;
+  margin: 0 auto;
+  background: #ffffff;
+}*/
+
+div#inner-container {
+  margin: 10px;
+}
+
+#specials-list {
+  width: 100%;
+}
+
+.specials-list-rounded {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+  margin-bottom: .5%;
+}
