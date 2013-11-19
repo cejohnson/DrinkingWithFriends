@@ -4,6 +4,7 @@ DrinkingWithFriends::Application.routes.draw do
 
   resources :specials
   get 'specials/:id/checkin' => 'specials#checkin', :as => :checkin
+  get 'specials' => 'specials#index'
 
   resources :bars
 

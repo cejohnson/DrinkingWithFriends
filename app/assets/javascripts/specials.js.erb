@@ -2,6 +2,16 @@ $(document).ready(function(){
 
   $("#search").val("");
 
+  $("#navbar-search").click(function() {
+    $("#filterbar").hide();
+    $("#searchbar").toggle();
+  });
+
+  $("#navbar-filter").click(function() {
+    $("#searchbar").hide();
+    $("#filterbar").toggle();
+  });
+
   $("#searchButton").click(function(){
     var searchText = $("#search").val();
     $(".specials-list-rounded").each(function() {

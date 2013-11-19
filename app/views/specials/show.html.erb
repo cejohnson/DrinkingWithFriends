@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<div class="panel panel-info">
-  <div class="panel-heading" style="font-size:x-large;"><%= @special.bar.name %></div>
+<div class="panel panel-info" style="border-color:#080808;">
+  <div class="panel-heading" style="font-size:x-large;color:white;background-color:#222;border-color:#080808;"><%= @special.bar.name %></div>
   <div class="panel-body">
     <div><%= @special.name %></div>
     <br>
@@ -32,12 +32,10 @@
   </div>
 </div>
 
-<%= link_to 'Back', specials_path %>
-
 <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
   <div style="width:100%;padding-left:5%">
-    <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p> <!-- glyphicon glyphicon-arrow-left / glyphicon-chevron-left-->
-    <p class="navbar-text" style="text-align:center; color:white; width:30%"><%= link_to "Check-In", checkin_path %></p> <!-- glyphicon glyphicon-ok -->
-    <a class="navbar-text" style="text-align:center; color:white; width:30%" href="http://maps.google.com/?q=<%= @address %>"><span class="glyphicon glyphicon-map-marker"></span></a>
+    <a class="navbar-text" style="text-align:center; color:white; width:30%" href="<%= specials_path %>"><i class="glyphicon glyphicon-chevron-left" style="color-white"></i></a> <!-- glyphicon glyphicon-arrow-left / glyphicon-chevron-left-->
+    <a class="navbar-text" style="text-align:center; color:white; width:30%" href="<%= checkin_path %>"><i class="glyphicon glyphicon-ok" style="color:white"></i></a> <!-- glyphicon glyphicon-ok -->
+    <a class="navbar-text" style="text-align:center; color:white; width:30%" href="http://maps.google.com/?q=<%= @address %>"><i class="glyphicon glyphicon-map-marker"></i></a>
   </div>
 </nav>

@@ -1,11 +1,11 @@
 <h1>Listing Specials</h1>
 
-<div id="specials-list" style="display:table">
+<ul id="specials-list" style="display:table;list-style-type: none;padding-left:0">
 
   <% @specials.each do |special| %>
-    <div class="specials-list-rounded" onClick="location.href='/specials/<%= special._id %>'" style="cursor:pointer">
+    <li class="specials-list-rounded" onClick="location.href='/specials/<%= special._id %>'" style="cursor:pointer">
       <div class="" style="display:inline-table;width:100%;">
-        <div class="name" style="width:66%;font:24px bold;display:table-cell"><%= special.bar.name %>: <%= special.name %></div>
+        <div class="name"><h2><%= special.bar.name %></h2> <p style="display:inline;"><%= special.bar.distance %> miles</p><br><h3><%= special.name %></h3></div>
         <div style="width:34%;display:table-cell">
           <div class="progress progress-striped active status-bar">
             <% if (100.0 * special.bar.numberOfUsers / special.requiredUsers) < 25 %>
@@ -30,20 +30,46 @@
           <%= special.bar.numberOfUsers %> out of <%= special.requiredUsers %> users!
         </div>
       </div>
-    </div>
+    </li>
   <% end %>
-</div>
+</ul>
 
 <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
-  <div class="searchbar">
+  <div id="searchbar" style="display:none;">
     <p>
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag "Search", :id => "searchButton", :name => nil %>
     </p>
   </div>
+  <div id="filterbar" style="display:none;">
+    <%= form_tag "/", :method => "get" do %>
+      <%= hidden_field_tag :parameter, "alpha" %>
+      <%= submit_tag "Alpha", :id => "alphaSort", :name => nil %>
+    <% end %>
+    <%= form_tag "/", :method => "get" do %>
+      <%= hidden_field_tag :parameter, "reversealpha" %>
+      <%= submit_tag "Reverse Alpha", :id => "reverseAlphaSort", :name => nil %>
+    <% end %>
+    <%= form_tag "/", :method => "get" do %>
+      <%= hidden_field_tag :parameter, "closestCompletion" %>
+      <%= submit_tag "Closest to Completion", :id => "closestCompletionSort", :name => nil %>
+    <% end %>
+    <%= form_tag "/", :method => "get" do %>
+      <%= hidden_field_tag :parameter, "farthestCompletion" %>
+      <%= submit_tag "Farthest from Completion", :id => "farthestCompletionSort", :name => nil %>
+    <% end %>
+    <%= form_tag "/", :method => "get" do %>
+      <%= hidden_field_tag :parameter, "closest" %>
+      <%= submit_tag "Closest", :id => "closestSort", :name => nil %>
+    <% end %>
+    <%= form_tag "/", :method => "get" do %>
+      <%= hidden_field_tag :parameter, "farthest" %>
+      <%= submit_tag "Farthest", :id => "farthestSort", :name => nil %>
+    <% end %>
+  </div>
   <div style="width:100%;padding-left:5%">
     <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p>
-    <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p>
-    <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p>
+    <p id="navbar-search" class="navbar-text" style="text-align:center; color:white; width:30%;cursor:pointer"><i class="glyphicon glyphicon-search" style="color:white"></i></p>
+    <p id="navbar-filter" class="navbar-text" style="text-align:center; color:white; width:30%;cursor:pointer"><i class="glyphicon glyphicon-sort" style="color:white"></i></p>
   </div>
 </nav>

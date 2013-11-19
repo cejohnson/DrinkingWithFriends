@@ -2,7 +2,7 @@ class SpecialsController < ApplicationController
   # GET /specials
   # GET /specials.json
   def index
-    @specials = Special.all
+    @specials = Special.sort(params[:parameter])
 
     respond_to do |format|
       format.html # index.html.erb

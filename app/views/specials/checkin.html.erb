@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<div class="panel panel-info">
-  <div class="panel-heading" style="font-size:x-large;">Congratulations!</div>
+<div class="panel panel-info" style="border-color:#080808;">
+  <div class="panel-heading" style="font-size:x-large;color:white;background-color:#222;border-color:#080808;">Congratulations!</div>
   <div class="panel-body">
     <div>Only <%= @special.requiredUsers - @special.bar.numberOfUsers %> more users to unlock this special!</div>
     <div class="progress progress-striped active status-bar">
@@ -34,7 +34,7 @@
 <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
   <div style="width:100%;padding-left:5%">
     <p class="navbar-text" style="text-align:center; color:white; width:30%"></p> <!-- glyphicon glyphicon-arrow-left / glyphicon-chevron-left-->
-    <p class="navbar-text" style="text-align:center; color:white; width:30%"><%= link_to 'Back', specials_path %></p> <!-- glyphicon glyphicon-ok -->
+    <a class="navbar-text" style="text-align:center; color:white; width:30%" href="<%= specials_path %>"><i class="glyphicon glyphicon-chevron-left" style="color-white"></i></a> <!-- glyphicon glyphicon-ok -->
     <p class="navbar-text" style="text-align:center; color:white; width:30%"></p>
   </div>
 </nav>

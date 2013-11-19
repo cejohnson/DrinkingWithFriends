@@ -46,3 +46,30 @@ div#inner-container {
   width: 100%;
   margin-bottom: .5%;
 }
+
+.navbar-text {
+  margin-top:0;
+  margin-bottom:0;
+  padding-top:15px;
+  padding-bottom:15px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  display: inline;
+}
+
+h3 {
+  display: inline;
+}
+
+.name {
+  width:66%;
+  font:24px bold;
+  display:table-cell;
+  vertical-align:middle;
+  padding-left: 15px;
+}
