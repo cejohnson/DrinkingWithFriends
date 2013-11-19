@@ -1,12 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <div class="panel panel-info">
-  <div class="panel-heading" style="font-size:x-large;"><%= @special.bar.name %></div>
+  <div class="panel-heading" style="font-size:x-large;">Congratulations!</div>
   <div class="panel-body">
-    <div><%= @special.name %></div>
-    <br>
-    <div><%= @special.description %></div>
-    <br>
+    <div>Only <%= @special.requiredUsers - @special.bar.numberOfUsers %> more users to unlock this special!</div>
     <div class="progress progress-striped active status-bar">
       <% if (100.0 * @special.bar.numberOfUsers / @special.requiredUsers) < 25 %>
         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= @special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * @special.bar.numberOfUsers / @special.requiredUsers %>%;">
@@ -32,12 +29,12 @@
   </div>
 </div>
 
-<%= link_to 'Back', specials_path %>
+<a href="http://twitter.con/share?text=<%= @twitterMessage %>">Share on Twitter!</a>
 
 <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
   <div style="width:100%;padding-left:5%">
-    <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p> <!-- glyphicon glyphicon-arrow-left / glyphicon-chevron-left-->
-    <p class="navbar-text" style="text-align:center; color:white; width:30%"><%= link_to "Check-In", checkin_path %></p> <!-- glyphicon glyphicon-ok -->
-    <a class="navbar-text" style="text-align:center; color:white; width:30%" href="http://maps.google.com/?q=<%= @address %>"><span class="glyphicon glyphicon-map-marker"></span></a>
+    <p class="navbar-text" style="text-align:center; color:white; width:30%"></p> <!-- glyphicon glyphicon-arrow-left / glyphicon-chevron-left-->
+    <p class="navbar-text" style="text-align:center; color:white; width:30%"><%= link_to 'Back', specials_path %></p> <!-- glyphicon glyphicon-ok -->
+    <p class="navbar-text" style="text-align:center; color:white; width:30%"></p>
   </div>
 </nav>

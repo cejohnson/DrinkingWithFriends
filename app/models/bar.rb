@@ -11,8 +11,8 @@ class Bar
 
   has_one :special
 
+  
   def getNavigationAddress
-    #Replace spaces in address with +'s, then add to the rest with plusses and return
-    return address
+    address.gsub(' ', '+') + '+' + city + '%2C+' + state + '+' + zip
   end
 end

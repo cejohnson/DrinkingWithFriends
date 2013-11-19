@@ -1,0 +1,16 @@
+$(document).ready(function(){
+
+  $("#search").val("");
+
+  $("#searchButton").click(function(){
+    var searchText = $("#search").val();
+    $(".specials-list-rounded").each(function() {
+      var name = $(this).find(".name").text();
+      if (name.toLowerCase().indexOf(searchText) >= 0) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+});

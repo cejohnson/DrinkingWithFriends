@@ -14,7 +14,9 @@ class SpecialsController < ApplicationController
   # GET /specials/1.json
   def show
     @special = Special.find(params[:id])
-    @address = Special.find(params[:id]).bar.getNavigationAddress
+    if @special && @special.bar
+      @address = @special.bar.getNavigationAddress
+    end
 
     respond_to do |format|
       format.html # show.html.erb

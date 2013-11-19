@@ -5,7 +5,7 @@
   <% @specials.each do |special| %>
     <div class="specials-list-rounded" onClick="location.href='/specials/<%= special._id %>'" style="cursor:pointer">
       <div class="" style="display:inline-table;width:100%;">
-        <div style="width:66%;font:24px bold;display:table-cell"><%= special.bar.name %>: <%= special.name %></div>
+        <div class="name" style="width:66%;font:24px bold;display:table-cell"><%= special.bar.name %>: <%= special.name %></div>
         <div style="width:34%;display:table-cell">
           <div class="progress progress-striped active status-bar">
             <% if (100.0 * special.bar.numberOfUsers / special.requiredUsers) < 25 %>
@@ -35,6 +35,12 @@
 </div>
 
 <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
+  <div class="searchbar">
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :id => "searchButton", :name => nil %>
+    </p>
+  </div>
   <div style="width:100%;padding-left:5%">
     <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p>
     <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p>
