@@ -3,7 +3,9 @@ class SpecialsController < ApplicationController
   # GET /specials.json
   def index
     @specials = Special.sort(params[:parameter])
-    @message = Message.last
+    if Message
+      @message = Message.last
+    end
 
     respond_to do |format|
       format.html # index.html.erb
