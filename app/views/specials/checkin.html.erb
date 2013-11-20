@@ -29,10 +29,16 @@
   </div>
 </div>
 
-<a href="https://twitter.com/intent/tweet?button_hashtag=DrinkingWithFriends&text=<%= @twitterMessage%>" class="twitter-hashtag-button">Tweet #DrinkingWithFriends</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<div class="center">
+  <%= link_to "Share with Others", new_message_path(:name => @special.bar.name, :usersToGo => @special.requiredUsers - @special.bar.numberOfUsers), :class => "btn btn-gray white", :style => "font-size:24px;margin:24px" %>
+</div>
 
-<div class="fb-share-button" data-href="<%= request.base_url %>" data-type="button_count"></div>
+<div class="center">
+  <a href="https://twitter.com/intent/tweet?button_hashtag=DrinkingWithFriends&text=<%= @twitterMessage%>" class="twitter-hashtag-button">Tweet #DrinkingWithFriends</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  <div class="fb-share-button" data-href="<%= request.base_url %>" data-type="button_count"></div>
+</div>
 
 <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
   <div style="width:100%;">

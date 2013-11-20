@@ -43,6 +43,7 @@
   background-color: #222222;
   /*border-color: #222222;*/
   margin: 0 5px;
+  color: #ffffff;
 }
 
 div#inner-container {
@@ -91,6 +92,10 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  text-align: center;
+}
+
 h3 {
   display: inline;
 }
@@ -110,4 +115,17 @@ h5 {
 .searchbox {
   height: 30px;
   border-radius: 5px;
+}
+
+.list-rounded {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+  margin-bottom: .5%;
+}
+
+.center {
+  text-align: center;
 }

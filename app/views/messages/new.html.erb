@@ -1,0 +1,16 @@
+<h1>Choose Your Message</h1>
+
+<% @messageOptions.each do |message| %>
+  <%= form_for @message do |f| %>
+    <%= f.hidden_field :text, value: message %>
+    <div style="text-align:center">
+      <%= f.submit message, :class => "btn btn-gray", :style => "font-size:20px;margin:20px;white-space: normal" %>
+    </div>
+  <% end %>
+<% end %>
+
+<nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
+  <div style="width:100%;">
+    <a class="navbar-text" style="width:100%" href="javascript:history.back()"><i class="fa fa-chevron-left fa-3x white"></i></a> <!-- glyphicon glyphicon-ok -->
+  </div>
+</nav>

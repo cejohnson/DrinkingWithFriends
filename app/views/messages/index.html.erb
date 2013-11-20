@@ -1,0 +1,15 @@
+<h1>Listing Messages</h1>
+
+<ul id="specials-list" style="display:table;list-style-type: none;padding-left:0">
+
+<% @messages.each do |message| %>
+  <li class="specials-list-rounded" onClick="location.href='/messages'" style="cursor:pointer">
+    <div class="name" style="height:54px"><%= message.text %></div>
+  </li>
+<% end %>
+
+<nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
+  <div style="width:100%;">
+    <a class="navbar-text" style="width:100%" href="<%= specials_path %>"><i class="fa fa-chevron-left fa-3x white"></i></a> <!-- glyphicon glyphicon-ok -->
+  </div>
+</nav>

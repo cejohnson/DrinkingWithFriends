@@ -3,6 +3,7 @@ class SpecialsController < ApplicationController
   # GET /specials.json
   def index
     @specials = Special.sort(params[:parameter])
+    @message = Message.last
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,9 +28,12 @@ class SpecialsController < ApplicationController
   # GET /specials/1/checkin
   def checkin
 
-    @bar = Special.find(params[:id]).bar
-    @bar.numberOfUsers += 1
-    @bar.save
+    @special = Special.find(params[:id])
+    @bar = @special.bar
+    if @bar.numberOfUsers < @special.requiredUsers
+      @bar.numberOfUsers += 1
+      @bar.save
+    end
 
     @twitterMessage = CGI::escape("I've checked in at " + @bar.name + "! Help me unlock this special by joining me here!")
 
