@@ -37,6 +37,6 @@ specials = Special.create([
   {name: 'Free Beer!', description: 'The beer! It\'s free! Like seriously free!', requiredUsers: 50, bar: bars[10]},
   {name: 'Mystery Beer', description: 'Nobody knows, but it\'s only $1', requiredUsers: 80, bar: bars[11]},
   {name: 'OMG is that a dinosaur?', description: 'No my bad, it\'s just more free beer!', requiredUsers: 50, bar: bars[12]}
-
-
 ])
+
+messages = Message.create({text: 'First Message!', date: Time.now})
