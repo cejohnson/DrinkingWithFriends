@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require bootstrap.min
+ *= require font-awesome
  *= require_self
  *= require_tree .
  */
@@ -48,10 +49,9 @@ div#inner-container {
 }
 
 .navbar-text {
-  margin-top:0;
-  margin-bottom:0;
-  padding-top:15px;
-  padding-bottom:15px;
+  margin: 0;
+  padding-top:25px;
+  padding-bottom:25px;
 }
 
 h1 {

@@ -44,7 +44,7 @@
   <div id="filterbar" style="display:none;">
     <%= form_tag "/", :method => "get" do %>
       <%= hidden_field_tag :parameter, "alpha" %>
-      <%= submit_tag "Alpha", :id => "alphaSort", :name => nil %>
+      <%= button_tag '', :id => "alphaSort", :class => "fa fa-sort-by-alphabet", :name => nil %>
     <% end %>
     <%= form_tag "/", :method => "get" do %>
       <%= hidden_field_tag :parameter, "reversealpha" %>
@@ -67,9 +67,9 @@
       <%= submit_tag "Farthest", :id => "farthestSort", :name => nil %>
     <% end %>
   </div>
-  <div style="width:100%;padding-left:5%">
-    <p class="navbar-text" style="text-align:center; color:white; width:30%">Hello World</p>
-    <p id="navbar-search" class="navbar-text" style="text-align:center; color:white; width:30%;cursor:pointer"><i class="glyphicon glyphicon-search" style="color:white"></i></p>
-    <p id="navbar-filter" class="navbar-text" style="text-align:center; color:white; width:30%;cursor:pointer"><i class="glyphicon glyphicon-sort" style="color:white"></i></p>
+  <div style="width:100%;">
+    <!--<p class="navbar-text" style="text-align:center; color:white; width:33%">Hello World</p>-->
+    <p id="navbar-search" class="navbar-text" style="text-align:center; color:white; width:50%;cursor:pointer"><i class="fa fa-search fa-3x" ></i></p>
+    <p id="navbar-filter" class="navbar-text" style="text-align:center; color:white; width:50%;cursor:pointer"><i class="fa fa-sort fa-3x" style="color:white"></i></p>
   </div>
 </nav>

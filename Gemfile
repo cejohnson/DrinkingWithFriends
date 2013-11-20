@@ -9,7 +9,7 @@ gem 'mongoid'
 
 #gem 'bootstrap-rails'
 
-
+gem 'font-awesome-sass'
 
 # Gems used only for assets and not required
 # in production environments by default.
