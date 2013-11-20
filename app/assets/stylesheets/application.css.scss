@@ -17,9 +17,9 @@
  @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../assets/glyphicons-halflings-regular.eot');
-  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
-       url('../assets/glyphicons-halflings-regular.woff') format('woff'), 
-       url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), 
+  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+       url('../assets/glyphicons-halflings-regular.woff') format('woff'),
+       url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
        url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
@@ -31,45 +31,83 @@
   background: #ffffff;
 }*/
 
+.white {
+  color: #ffffff;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn-gray {
+  background-color: #222222;
+  /*border-color: #222222;*/
+  margin: 0 5px;
+}
+
 div#inner-container {
   margin: 10px;
 }
 
-#specials-list {
-  width: 100%;
+.status-bar {
+  height: 25px;
+  margin: 5px;
 }
 
-.specials-list-rounded {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  border: 2px solid black;
-  width: 100%;
-  margin-bottom: .5%;
+.status-bar-wrapper {
+   width: 40%;
+   display: table-cell;
+   text-align: center;
+}
+
+.status-bar-text {
+  text-align:center;
+  margin-top: 15px;
+}
+
+.name {
+  width: 40%;
+  font: 24px bold;
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 15px;
+}
+
+.distance {
+  width: 20%;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .navbar-text {
   margin: 0;
   padding-top:25px;
   padding-bottom:25px;
+  text-align:center;
+  color:white;
 }
 
 h1 {
   text-align: center;
 }
 
-h2 {
-  display: inline;
-}
-
 h3 {
   display: inline;
 }
 
-.name {
-  width:66%;
-  font:24px bold;
-  display:table-cell;
-  vertical-align:middle;
-  padding-left: 15px;
+h4 {
+  display: inline;
+}
+
+h5 {
+  display: inline;
+}
+
+.border-right {
+  border-right: 1px solid white;
+}
+
+.searchbox {
+  height: 30px;
+  border-radius: 5px;
 }

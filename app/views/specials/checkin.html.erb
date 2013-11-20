@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <div class="panel panel-info" style="border-color:#080808;">
-  <div class="panel-heading" style="font-size:x-large;color:white;background-color:#222;border-color:#080808;">Congratulations!</div>
+  <div class="panel-heading" style="font-size:x-large;color:white;background-color:#222;border-color:#080808;">Thanks for Checking In!</div>
   <div class="panel-body">
-    <div>Only <%= @special.requiredUsers - @special.bar.numberOfUsers %> more users to unlock this special!</div>
+    <div><h3>Only <%= @special.requiredUsers - @special.bar.numberOfUsers %> more users to unlock this special!</h3></div>
     <div class="progress progress-striped active status-bar">
-      <% if (100.0 * @special.bar.numberOfUsers / @special.requiredUsers) < 25 %>
+      <% if (100.0 * @special.bar.numberOfUsers / @special.requiredUsers) < 30 %>
         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= @special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * @special.bar.numberOfUsers / @special.requiredUsers %>%;">
         <div class="sr-only"></div>
         </div>
-      <% elsif (100.0 * @special.bar.numberOfUsers / @special.requiredUsers) < 50 %>
+      <% elsif (100.0 * @special.bar.numberOfUsers / @special.requiredUsers) < 60 %>
         <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * @special.bar.numberOfUsers / @special.requiredUsers %>%;">
         <div class="sr-only"></div>
         </div>
@@ -23,8 +23,8 @@
         </div>
       <% end %>
     </div>
-    <div>
-      <%= @special.bar.numberOfUsers %> out of <%= @special.requiredUsers %> users!
+    <div class="status-bar-text">
+      <h4><%= @special.bar.numberOfUsers %> out of <%= @special.requiredUsers %> users!</h4>
     </div>
   </div>
 </div>
@@ -32,9 +32,7 @@
 <a href="http://twitter.con/share?text=<%= @twitterMessage %>">Share on Twitter!</a>
 
 <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
-  <div style="width:100%;padding-left:5%">
-    <p class="navbar-text" style="text-align:center; color:white; width:30%"></p> <!-- glyphicon glyphicon-arrow-left / glyphicon-chevron-left-->
-    <a class="navbar-text" style="text-align:center; color:white; width:30%" href="<%= specials_path %>"><i class="glyphicon glyphicon-chevron-left" style="color-white"></i></a> <!-- glyphicon glyphicon-ok -->
-    <p class="navbar-text" style="text-align:center; color:white; width:30%"></p>
+  <div style="width:100%;">
+    <a class="navbar-text" style="width:100%" href="<%= specials_path %>"><i class="fa fa-chevron-left fa-3x white"></i></a> <!-- glyphicon glyphicon-ok -->
   </div>
 </nav>

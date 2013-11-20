@@ -1,3 +1,31 @@
 // Place all the styles related to the specials controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.btn-6 {
+  display: inline;
+  width: 78px;
+}
+
+#specials-list {
+  width: 100%;
+}
+
+.specials-list-rounded {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 100%;
+  margin-bottom: .5%;
+}
+
+.pop-up-bar-wrapper {
+  text-align: center;
+  border-bottom: 1px solid white;
+  padding: 10px 0;
+}
+
+.pop-up-bar {
+  display: inline-block;
+}
