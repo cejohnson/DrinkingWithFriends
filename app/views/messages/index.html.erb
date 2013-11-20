@@ -3,8 +3,8 @@
 <ul id="specials-list" style="display:table;list-style-type: none;padding-left:0">
 
 <% @messages.each do |message| %>
-  <li class="specials-list-rounded" onClick="location.href='/messages'" style="cursor:pointer">
-    <div class="name" style="height:54px"><%= message.text %></div>
+  <li class="list-rounded">
+    <div class="name" style="height:54px"><div class="specialName"><%= message.text %></div></div>
   </li>
 <% end %>
 

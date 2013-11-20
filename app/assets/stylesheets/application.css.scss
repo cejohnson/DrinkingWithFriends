@@ -51,7 +51,7 @@ div#inner-container {
 }
 
 .status-bar {
-  height: 25px;
+  height: 30px;
   margin: 5px;
 }
 
@@ -59,6 +59,7 @@ div#inner-container {
    width: 40%;
    display: table-cell;
    text-align: center;
+   vertical-align: middle;
 }
 
 .status-bar-text {
@@ -74,10 +75,39 @@ div#inner-container {
   padding-left: 15px;
 }
 
+.barName {
+  font-size: 36px;
+}
+
+.specialName {
+  font-size: 30px;
+}
+
 .distance {
   width: 20%;
   display: table-cell;
   vertical-align: middle;
+  font-size: 24px;
+}
+
+.userCount {
+  font-size: 24px;
+}
+
+.showSpecial {
+  margin: 15px 0;
+}
+
+.panel {
+  margin-top: 20px;
+}
+
+.panel-info>.panel-heading {
+  padding: 25px 15px;
+  font-size: 42px;
+  color: white;
+  background-color: #222;
+  border-color: #080808;
 }
 
 .navbar-text {
@@ -88,8 +118,14 @@ div#inner-container {
   color:white;
 }
 
+.navbar-inverse {
+  border-color: #ffffff;
+  min-height: 115px;
+}
+
 h1 {
   text-align: center;
+  font-size: 48px;
 }
 
 h2 {
@@ -113,7 +149,10 @@ h5 {
 }
 
 .searchbox {
-  height: 30px;
+  height: 40px;
+  font-size: 24px;
+  padding-left: 5px;
+  width: 320px;
   border-radius: 5px;
 }
 
@@ -121,7 +160,9 @@ h5 {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  border: 2px solid black;
+  border: 2px solid #080808;
+  background-color: #222;
+  color: white;
   width: 100%;
   margin-bottom: .5%;
 }

@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <div class="panel panel-info" style="border-color:#080808;">
-  <div class="panel-heading" style="font-size:x-large;color:white;background-color:#222;border-color:#080808;">Thanks for Checking In!</div>
+  <div class="panel-heading">Thanks for Checking In!</div>
   <div class="panel-body">
-    <div><h3>Only <%= @special.requiredUsers - @special.bar.numberOfUsers %> more users to unlock this special!</h3></div>
+    <div><div class="specialName showSpecial">Only <%= @special.requiredUsers - @special.bar.numberOfUsers %> more users to unlock this special!</div></div>
     <div class="progress progress-striped active status-bar">
       <% if (100.0 * @special.bar.numberOfUsers / @special.requiredUsers) < 30 %>
         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= @special.bar.numberOfUsers %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= 100.0 * @special.bar.numberOfUsers / @special.requiredUsers %>%;">
@@ -24,17 +24,17 @@
       <% end %>
     </div>
     <div class="status-bar-text">
-      <h4><%= @special.bar.numberOfUsers %> out of <%= @special.requiredUsers %> users!</h4>
+      <div class="userCount"><%= @special.bar.numberOfUsers %> out of <%= @special.requiredUsers %> users!</div>
     </div>
   </div>
 </div>
 
 <div class="center">
-  <%= link_to "Share with Others", new_message_path(:name => @special.bar.name, :usersToGo => @special.requiredUsers - @special.bar.numberOfUsers), :class => "btn btn-gray white", :style => "font-size:24px;margin:24px" %>
+  <%= link_to "Share with Others", new_message_path(:name => @special.bar.name, :usersToGo => @special.requiredUsers - @special.bar.numberOfUsers), :class => "btn btn-gray white", :style => "font-size:30px;margin:30px" %>
 </div>
 
 <div class="center">
-  <a href="https://twitter.com/intent/tweet?button_hashtag=DrinkingWithFriends&text=<%= @twitterMessage%>" class="twitter-hashtag-button">Tweet #DrinkingWithFriends</a>
+  <a href="https://twitter.com/intent/tweet?button_hashtag=DrinkingWithFriends&text=<%= @twitterMessage%>" class="twitter-hashtag-button" data-size="large">Tweet #DrinkingWithFriends</a>
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
   <div class="fb-share-button" data-href="<%= request.base_url %>" data-type="button_count"></div>
@@ -42,6 +42,6 @@
 
 <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
   <div style="width:100%;">
-    <a class="navbar-text" style="width:100%" href="<%= specials_path %>"><i class="fa fa-chevron-left fa-3x white"></i></a> <!-- glyphicon glyphicon-ok -->
+    <a class="navbar-text" style="width:100%" href="<%= specials_path %>"><i class="fa fa-chevron-left fa-5x white"></i></a> <!-- glyphicon glyphicon-ok -->
   </div>
 </nav>

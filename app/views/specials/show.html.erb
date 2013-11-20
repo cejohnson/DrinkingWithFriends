@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <div class="panel panel-info" style="border-color:#080808;">
-  <div class="panel-heading" style="font-size:x-large;color:white;background-color:#222;border-color:#080808;"><%= @special.bar.name %></div>
+  <div class="panel-heading"><%= @special.bar.name %></div>
   <div class="panel-body">
-    <div><h3><%= @special.name %></h3></div>
+    <div><div class="barName showSpecial"><%= @special.name %></div></div>
     <br>
-    <div><h4><%= @special.description %></h4></div>
+    <div><div class="specialName showSpecial"><%= @special.description %></div></div>
     <br>
     <div class="progress progress-striped active status-bar">
       <% if (100.0 * @special.bar.numberOfUsers / @special.requiredUsers) < 30 %>
@@ -27,15 +27,15 @@
       <% end %>
     </div>
     <div class="status-bar-text">
-      <h4><%= @special.bar.numberOfUsers %> out of <%= @special.requiredUsers %> users! Only <%= @special.requiredUsers - @special.bar.numberOfUsers %> left to go!</h4>
+      <div class="userCount"><%= @special.bar.numberOfUsers %> out of <%= @special.requiredUsers %> users! Only <%= @special.requiredUsers - @special.bar.numberOfUsers %> left to go!</div>
     </div>
   </div>
 </div>
 
 <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
   <div style="width:100%;">
-    <a class="navbar-text border-right" style="width:33%" href="<%= specials_path %>"><i class="fa fa-chevron-left fa-3x white"></i></a>
-    <a class="navbar-text border-right" style="width:34%" href="<%= checkin_path %>"><i class="fa fa-check fa-3x white"></i></a>
-    <a class="navbar-text" style="width:33%" href="http://maps.google.com/?q=<%= @address %>"><i class="fa fa-map-marker fa-3x white"></i></a>
+    <a class="navbar-text border-right" style="width:33%" href="<%= specials_path %>"><i class="fa fa-chevron-left fa-5x white"></i></a>
+    <a class="navbar-text border-right" style="width:34%" href="<%= checkin_path %>"><i class="fa fa-check fa-5x white"></i></a>
+    <a class="navbar-text" style="width:33%" href="http://maps.google.com/?q=<%= @address %>"><i class="fa fa-map-marker fa-5x white"></i></a>
   </div>
 </nav>

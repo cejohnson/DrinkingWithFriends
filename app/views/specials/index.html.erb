@@ -1,6 +1,6 @@
 <% if @message %>
   <div class="list-rounded" onClick="location.href='/messages'" style="cursor:pointer">
-    <div class="name" style="height:54px"><%= @message.text %></div>
+    <div class="name" style="height:54px"><div class="specialName"><%= @message.text %></div></div>
   </div>
 <% end %>
 
@@ -11,8 +11,8 @@
   <% @specials.each do |special| %>
     <li class="specials-list-rounded" onClick="location.href='/specials/<%= special._id %>'" style="cursor:pointer">
       <div class="" style="display:inline-table;width:100%;">
-        <div class="name"><h3><%= special.bar.name %></h3><br><h4><%= special.name %></h4></div>
-        <div class="distance"><h4><%= special.bar.distance %> miles</h4></div>
+        <div class="name"><div class="barName"><%= special.bar.name %></div><div class="specialName"><%= special.name %></div></div>
+        <div class="distance"><%= special.bar.distance %> miles</div>
         <div class="status-bar-wrapper">
           <div class="progress progress-striped active status-bar">
             <% if (100.0 * special.bar.numberOfUsers / special.requiredUsers) < 30 %>
@@ -35,7 +35,7 @@
             <% end %>
           </div>
           <div>
-            <h5><%= special.bar.numberOfUsers %> out of <%= special.requiredUsers %> users!</h5>
+            <div class="userCount"><%= special.bar.numberOfUsers %> out of <%= special.requiredUsers %> users!</div>
           </div>
         </div>
       </div>
@@ -45,10 +45,10 @@
 
 <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
   <div id="searchbar" class="pop-up-bar-wrapper" style="display:none;">
-    <div class="pop-up-bar">
+    <div class="pop-up-bar" style="padding-left: 90px;">
       <%= text_field_tag :search, params[:search], class: "searchbox" %>
       <%= button_tag type: "submit", id: "searchButton", class: "btn btn-gray" do %>
-        <i class="fa fa-search fa-3x white"></i>
+        <i class="fa fa-search fa-4x white"></i>
       <% end %>
     </div>
   </div>
@@ -57,44 +57,44 @@
       <%= form_tag "/", class: "btn-6", :method => "get" do %>
         <%= hidden_field_tag :parameter, "alpha" %>
         <%= button_tag type: "submit", class: "btn btn-gray" do %>
-          <i class="fa fa-sort-alpha-asc fa-3x white"></i>
+          <i class="fa fa-sort-alpha-asc fa-4x white"></i>
         <% end %>
       <% end %>
       <%= form_tag "/", class: "btn-6", :method => "get" do %>
         <%= hidden_field_tag :parameter, "reversealpha" %>
         <%= button_tag type: "submit", class: "btn btn-gray" do %>
-          <i class="fa fa-sort-alpha-desc fa-3x white"></i>
+          <i class="fa fa-sort-alpha-desc fa-4x white"></i>
         <% end %>
       <% end %>
       <%= form_tag "/", class: "btn-6", :method => "get" do %>
         <%= hidden_field_tag :parameter, "closestCompletion" %>
         <%= button_tag type: "submit", class: "btn btn-gray" do %>
-          <i class="fa fa-sort-amount-desc fa-3x white"></i>
+          <i class="fa fa-sort-amount-desc fa-4x white"></i>
         <% end %>
       <% end %>
       <%= form_tag "/", class: "btn-6", :method => "get" do %>
         <%= hidden_field_tag :parameter, "farthestCompletion" %>
         <%= button_tag type: "submit", class: "btn btn-gray" do %>
-          <i class="fa fa-sort-amount-asc fa-3x white"></i>
+          <i class="fa fa-sort-amount-asc fa-4x white"></i>
         <% end %>
       <% end %>
       <%= form_tag "/", class: "btn-6", :method => "get" do %>
         <%= hidden_field_tag :parameter, "closest" %>
         <%= button_tag type: "submit", class: "btn btn-gray" do %>
-          <i class="fa fa-sort-numeric-asc fa-3x white"></i>
+          <i class="fa fa-sort-numeric-asc fa-4x white"></i>
         <% end %>
       <% end %>
       <%= form_tag "/", class: "btn-6", :method => "get" do %>
         <%= hidden_field_tag :parameter, "farthest" %>
         <%= button_tag type: "submit", class: "btn btn-gray" do %>
-          <i class="fa fa-sort-numeric-desc fa-3x white"></i>
+          <i class="fa fa-sort-numeric-desc fa-4x white"></i>
         <% end %>
       <% end %>
     </div>
   </div>
   <div style="width:100%;">
     <!--<p class="navbar-text" style="text-align:center; color:white; width:33%">Hello World</p>-->
-    <p id="navbar-search" class="navbar-text border-right" style="width:50%;cursor:pointer"><i class="fa fa-search fa-3x white" ></i></p>
-    <p id="navbar-filter" class="navbar-text" style="width:50%;cursor:pointer"><i class="fa fa-sort fa-3x white"></i></p>
+    <p id="navbar-search" class="navbar-text border-right" style="width:50%;cursor:pointer"><i class="fa fa-search fa-5x white" ></i></p>
+    <p id="navbar-filter" class="navbar-text" style="width:50%;cursor:pointer"><i class="fa fa-sort fa-5x white"></i></p>
   </div>
 </nav>
