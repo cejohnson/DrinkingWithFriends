@@ -4,7 +4,7 @@ class SpecialsController < ApplicationController
   def index
     @specials = Special.sort(params[:parameter])
     #if Message.all.length > 0
-    #  @message = Message.last
+      @message = Message.last
     #end
 
     respond_to do |format|
