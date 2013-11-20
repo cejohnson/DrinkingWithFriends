@@ -3,7 +3,7 @@ class SpecialsController < ApplicationController
   # GET /specials.json
   def index
     @specials = Special.sort(params[:parameter])
-    if Message
+    if Message.all.length > 0
       @message = Message.last
     end
 
